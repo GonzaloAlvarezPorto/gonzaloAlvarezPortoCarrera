@@ -1,19 +1,19 @@
 import React, { useContext } from 'react'
-import { Main } from './mainViews/Main'
-import { Educacion } from './mainViews/Educacion'
-import { Servicios } from './mainViews/Servicios'
-import { Proyectos } from './mainViews/Proyectos'
-import { Header } from '../header/Header'
-import { Perfil } from './mainViews/Perfil'
-import { CartContext } from '../../context/CartContext'
+import { CartContext } from '../context/CartContext'
+import { Main } from './Main';
+import { Header } from './Header';
+import { Perfil } from './Perfil';
+import { Educacion } from './Educacion';
+import { Servicios } from './Servicios';
+import { Proyectos } from './Proyectos';
 
 export const Index = () => {
 
     const { onMouseEnPagina } = useContext(CartContext);
 
     return (
-        <main className='principal' onMouseEnter={onMouseEnPagina}>
-                <div className='principal__cuerpo'>
+        <main onMouseEnter={onMouseEnPagina}>
+                <div className='bgc-main d-flex fd-col'>
                     <section id="main">
                         <Main />
                     </section>
@@ -34,3 +34,5 @@ export const Index = () => {
         </main>
     )
 }
+
+export default Index;

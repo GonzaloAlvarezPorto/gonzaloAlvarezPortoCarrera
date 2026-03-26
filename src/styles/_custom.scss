@@ -1,0 +1,335 @@
+@use "./variables" as var;
+
+/* #region base */
+.w-25px {
+    width: 25px;
+}
+
+.w-40px {
+    width: 40px;
+}
+
+.w-50px {
+    width: 50px;
+}
+
+.w-65px {
+    width: 65px;
+}
+
+.w-100px {
+    width: 100px;
+}
+
+.w-120px {
+    width: 120px;
+}
+
+.w-150px {
+    width: 150px;
+}
+
+.w-250px {
+    width: 250px;
+}
+
+.minW-50vw {
+    min-width: 50vw;
+}
+
+.maxW-150px {
+    max-width: 150px;
+}
+
+.h-20px {
+    height: 20px;
+}
+
+.h-25px {
+    height: 25px;
+}
+
+.h-40px {
+    height: 40px;
+}
+
+.h-50px {
+    height: 50px;
+}
+
+.h-60px {
+    height: 60px;
+}
+
+.h-100px {
+    height: 100px;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.bdb-0 {
+    // ex .sinBordeInferior{
+    border-bottom: 0;
+}
+
+.bdb_1_s_bd-lt {
+    border-bottom: 1px solid var.$bd-lt;
+}
+
+.bd_2_s_shadow {
+    border: 2px solid var.$shadow;
+}
+
+.pdb-0 {
+    // ex .sinPaddingInferior {
+    padding-bottom: 0;
+}
+
+.bd-none {
+    // ex .sinBorde {
+    border: none;
+}
+
+.mb-0 {
+    // ex .sinMarginInferior {
+    margin-bottom: 0px;
+}
+
+.mr-1rem {
+    margin-right: 1rem;
+}
+
+.p-4px {
+    padding: 4px;
+}
+
+.p-5px {
+    padding: 5px;
+}
+
+.p-15px {
+    padding: 15px;
+}
+
+.p-10px_20px {
+    padding: 10px 20px;
+}
+
+.p-0_5rem {
+    padding: 0.5rem;
+}
+
+.p-0_7rem {
+    padding: 0.7rem;
+}
+
+.pt-0 {
+    // ex .sinPaddingSuperior {
+    padding-top: 0;
+}
+
+.py-10px {
+    // ex .contenedorCoderHouse {
+    padding: 10px 0;
+}
+
+.bgc-transp {
+    background-color: transparent;
+}
+
+.bgc-main {
+    background-color: var.$main;
+}
+
+.bgc-black {
+    background-color: black;
+}
+
+.bgc-section {
+    background-color: var.$section;
+}
+
+.bgc-footer {
+    background-color: var.$footer;
+}
+
+.bgc-titulos {
+    background-color: var.$titulos;
+}
+
+.bd_2_s_shadow {
+    border: 2px solid var.$shadow;
+}
+
+.bd_1_s_white {
+    border: 1px solid white;
+}
+
+.bdt_1_s_bd-lt {
+    border-top: 1px solid var.$bd-lt;
+}
+
+.bdrad-2px {
+    border-radius: 2px;
+}
+
+.mt-5rem {
+    margin-top: 5rem;
+}
+
+.ml-20px {
+    margin-left: 20px;
+}
+
+.left-90px {
+    left: 90px;
+}
+
+.fc-titulos {
+    color: var.$titulos;
+}
+
+.fc-white {
+    color: white;
+}
+
+.fc-derechos {
+    color: var.$derechos;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+.td-none {
+    text-decoration: none;
+}
+
+.as-center {
+    align-self: center;
+}
+
+.bd-animation {
+    animation: borderAnimation 5s;
+}
+
+.pos-abs {
+    position: absolute;
+}
+
+.pos-rel {
+    position: relative;
+}
+
+.txt-shadow {
+    text-shadow: 1px 1px 1px var.$shadow;
+}
+
+.td-under-shadow {
+    text-decoration: underline var.$shadow;
+}
+
+.fs-11px {
+    font-size: 11px;
+}
+
+.fs-italic {
+    font-style: italic;
+}
+
+.jc-around {
+    justify-content: space-around;
+}
+
+.fw-wr {
+    flex-wrap: wrap;
+}
+
+.borde3d {
+    border-left: 2px solid var.$bd-lt;
+    border-right: 2px solid var.$bd-rb;
+    border-top: 2px solid var.$bd-lt;
+    border-bottom: 2px solid var.$bd-rb;
+}
+
+.titulos {
+    color: var.$titulos;
+    text-decoration: underline var.$shadow;
+    text-underline-offset: 5px;
+}
+
+.z-idx-1000 {
+    z-index: 1000;
+}
+
+.z-idx-2 {
+    z-index: 2;
+}
+
+.ls-none {
+    list-style: none;
+}
+
+.g-2rem {
+    gap: 2rem;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.menu {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: black;
+    z-index: 999;
+    display: none;
+}
+
+.menu.visible {
+    display: flex;
+}
+
+/* #endregion */
+
+/* #region mq */
+@media screen and (min-width:768px) {
+    .md-fs-16px {
+        font-size: 16px;
+    }
+
+    .md-w-300px {
+        width: 300px;
+    }
+
+    .md-w-400px {
+        width: 400px;
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: row;
+        position: inherit;
+    }
+
+    .md-m-0{
+        margin: 0;
+    }
+
+    .md-ta-center{
+        text-align: center;
+    }
+}
+
+/* #endregion */
+
+/* #region desktop */
+@media screen and (min-width:1024px) {}
+
+/* #endregion */

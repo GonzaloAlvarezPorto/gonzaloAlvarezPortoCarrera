@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import educacion from '../../../data/educacion.json';
-import { CartContext } from '../../../context/CartContext';
+import educacion from '../data/educacion.json';
+import { CartContext } from '../context/CartContext';
 
 export const Educacion = () => {
     const formacion = educacion.formacion || [];
@@ -26,41 +26,47 @@ export const Educacion = () => {
 
     return (
         <>
-            <div className="cuerpo__formacionProfesional sinPaddingInferior">
-                <div className='formacionProfesional__contenedor' onMouseEnter={onMouseEnterCoderHouse} onMouseLeave={onMouseEnPagina}>
-                    <p className='formacionProfesional__encabezado'>
+            <div className="p-1rem d-flex fd-col minW-50vw bdb_1_s_bd-lt fs-11px md-fs-16px g-0_5rem">
+                <div className='bgc-section' onMouseEnter={onMouseEnterCoderHouse} onMouseLeave={onMouseEnPagina}>
+                    <p className='borde3d titulos bdrad-2px p-1rem'>
                         Formación Académica:
                     </p>
-                    <div className='formacionProfesional__cursos'>
+                    <div className='bgc-section bdrad-2px'>
                         {formacionOrdenada.length > 0 ? (
                             formacionOrdenada.map((item, index) => (
-                                <div key={index} className="formacionProfesional__item">
-                                    <div className='formacionProfesional__institucionData'>
-                                        <p className='institucion__nombre'>{item.institucion}<img className='institucion__nombreLogo' src={item.logo} alt={`${item.institucion} logo`} /></p>
-                                        <p className='institucion__tipo'>{item.tipo}</p>
+                                <div key={index} className="borde3d p-1rem d-flex fd-col fc-white g-2rem">
+                                    <div className='d-flex fd-col g-1rem'>
+                                        <div className='d-flex fd-row jc-between ai-center'>
+                                            <p>{item.institucion}</p>
+                                            <img className='w-25px' src={item.logo} alt={`${item.institucion} logo`} />
+                                        </div>
+                                        <p>{item.tipo}</p>
                                     </div>
-                                    <div className='formacionProfesional__institucionPais'>
-                                        <p className='institucion__ubicacion'>{item.ubicacion}<img className='institucion__ubicacionBandera' src={item.bandera} alt={`${item.ubicacion} bandera`} /></p>
-                                        <p className='institucion__periodo'>{item.periodo}</p>
+                                    <div className='d-flex fd-row jc-between ai-center'>
+                                        <div className='d-flex fd-row g-0_5rem ai-center'>
+                                            <p>{item.ubicacion}</p>
+                                            <img className='w-25px' src={item.bandera} alt={`${item.ubicacion} bandera`} />
+                                        </div>
+                                        <p>{item.periodo}</p>
                                     </div>
-                                    <div className='formacionProfesional__educacion'>
-                                        <div className='educacion__temas'>
+                                    <div className='d-flex fd-col g-1rem'>
+                                        <div className=''>
                                             {Array.isArray(item.temas) ? (
-                                                <div className='temas__contenedor'>
-                                                    <ul className='temas__titulos'>
+                                                <div className=''>
+                                                    <ul className='ls-none'>
                                                         {item.temas.map((tema, idx) => (
-                                                            <li className='temas__titulo' key={idx}>
+                                                            <li className='' key={idx}>
                                                                 ➖ {tema}
                                                             </li>
                                                         ))}
                                                     </ul>
                                                 </div>
                                             ) : (
-                                                <div className='temas__contenedor contenedorCoderHouse'>
-                                                    <div className='cursos__nombres'>
+                                                <div className='d-flex fd-col ai-center g-1rem'>
+                                                    <div className='d-flex fd-col ai-center w-100 md-fd-row'>
                                                         {Object.keys(item.temas).map((curso, idx) => (
                                                             <button
-                                                                className={`curso__nombre ${cursoSeleccionado === curso ? 'active' : ''}`}
+                                                                className={`fs-11px md-fs-16px w-100 h-60px bgc-main borde3d md-w-25 fc-white ${cursoSeleccionado === curso ? 'active' : ''}`}
                                                                 key={idx}
                                                                 onClick={() => handleCursoClick(curso)}
                                                                 onMouseEnter={() => onMouseEnter(`Desplegar ${curso}`)}
@@ -70,15 +76,15 @@ export const Educacion = () => {
                                                             </button>
                                                         ))}
                                                     </div>
-                                                    <div className={`cursos__grupo ${cursoSeleccionado ? 'visible' : 'none'}`}>
+                                                    <div className={`${cursoSeleccionado ? 'visible' : 'none'}`}>
                                                         {cursoSeleccionado ? (
                                                             Object.entries(item.temas).map(([curso, temas], idx) => (
                                                                 curso === cursoSeleccionado && (
-                                                                    <div className='temas__grupo' key={idx}>
-                                                                        <ul className='temas__herramientas sinMarginInferior'>
+                                                                    <div className='d-flex fd-row fw-wr jc-center' key={idx}>
+                                                                        <ul className='d-flex fd-row fw-wr ai-center jc-center g-1rem'>
                                                                             {temas.map((tema, temaIdx) => (
-                                                                                <li className='herramientas__nombre' key={temaIdx}>
-                                                                                    <img className='herramientas__imagen' src={tema.imagen} alt={tema.nombre} />
+                                                                                <li className='d-flex fd-row g-0_5rem ai-center ls-none' key={temaIdx}>
+                                                                                    <img className='h-25px' src={tema.imagen} alt={tema.nombre} />
                                                                                     {tema.nombre}
                                                                                 </li>
                                                                             ))}
@@ -87,7 +93,7 @@ export const Educacion = () => {
                                                                 )
                                                             ))
                                                         ) : (
-                                                            <p className='grupo__mensaje'>Elige una de las opciones</p>
+                                                            <p className='d-none'>Elige una de las opciones</p>
                                                         )}
                                                     </div>
                                                 </div>
@@ -101,45 +107,45 @@ export const Educacion = () => {
                         )}
                     </div>
                 </div>
-                <div className="formacionProfesional__contenedor">
-                    <p className='formacionProfesional__encabezado'>
+                <div className="bgc-section d-flex fd-col">
+                    <p className='fc-titulos titulos p-1rem borde3d'>
                         Habilidades:
                     </p>
-                    <div className='formacionProfesional__habilidades'>
+                    <div className='borde3d p-1rem fc-white d-flex fd-col ai-center g-1rem'>
                         {herramientas.map((herramienta, index) => (
-                            <div className='habilidades__item' key={index}>
+                            <div className='d-flex fd-col ai-center g-1rem' key={index}>
                                 {herramienta.habilidades.map((habilidad, idx) => (
-                                    <div key={idx} className="item__contenedor">
-                                        <p className='item__titulo'>{habilidad.nombre}</p>
-                                        <img className='item__logo' src={habilidad.logo} alt={habilidad.nombre} />
-                                        <p className='item__descripcion'>{habilidad.descripcion}</p>
+                                    <div key={idx} className="d-flex fd-col md-fd-row ai-center g-1rem">
+                                        <p>{habilidad.nombre}</p>
+                                        <img className='w-50px' src={habilidad.logo} alt={habilidad.nombre} />
+                                        <p className='ta-center'>{habilidad.descripcion}</p>
                                     </div>
                                 ))}
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className="formacionProfesional__contenedor">
-                    <p className='formacionProfesional__encabezado'>
+                <div className="bgc-section d-flex fd-col">
+                    <p className='fc-titulos titulos p-1rem borde3d'>
                         Idiomas:
                     </p>
-                    <div className='formacionProfesional__habilidades'>
+                    <div className='d-flex fd-col g-1rem'>
                         {idiomas.map((idioma, index) => (
-                            <div className='habilidades__item' key={index}>
+                            <div className='d-flex fd-col g-1rem' key={index}>
                                 {idiomas.map((idioma, idx) => (
-                                    <div key={idx} className="item__contenedor">
-                                        <p className='item__titulo'>{idioma.idioma}</p>
-                                        <div className='contenedor__nivel'>
-                                            <p className='item__nivel'>Nivel Conversacional: </p>
-                                            <div className='contenedor__item__nivelAvanzado'>
-                                                <div className='item__nivelAvanzado'></div>
+                                    <div key={idx} className="d-flex fd-col md-fd-row g-1rem md-jc-between p-1rem borde3d fc-white ai-center">
+                                        <p>{idioma.idioma}</p>
+                                        <div className='d-flex fd-col md-fd-row g-0_5rem md-g-1rem ai-center'>
+                                            <p>Nivel Conversacional: </p>
+                                            <div className='d-flex w-100px h-20px bd_2_s_shadow bgc-main'>
+                                                <div className='w-80 h-100 bgc-titulos'></div>
                                             </div>
                                             <p>{idioma.nivelOral}</p>
                                         </div>
-                                        <div className='sinBordeInferior sinPaddingInferior contenedor__nivel'>
-                                            <p className='item__nivel'>Nivel Escrito:</p>
-                                            <div className='contenedor__item__nivelAvanzado'>
-                                                <div className='item__nivelAvanzado'></div>
+                                        <div className='d-flex fd-col md-fd-row g-0_5rem md-g-1rem ai-center'>
+                                            <p>Nivel Escrito:</p>
+                                            <div className='d-flex w-100px h-20px bd_2_s_shadow bgc-main'>
+                                                <div className='w-80 h-100 bgc-titulos'></div>
                                             </div>
                                             <p>{idioma.nivelEscrito}</p>
                                         </div>

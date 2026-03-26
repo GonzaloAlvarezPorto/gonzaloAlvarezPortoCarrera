@@ -1,0 +1,58 @@
+@use "./styles/variables" as var;
+@use "./styles/keyframes";
+
+@use "./styles/individuals";
+@use "./styles/custom";
+
+@font-face {
+    font-family: 'Monkey Island SCUMM';
+    src: url('/assets/ONESIZE_.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chicago';
+    src: url('/assets/ChicagoFLF.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Monkey Island SCUMM', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: #000;
+    padding: 0;
+    margin: 0;
+    min-height: 700px;
+    cursor: url(/media/img/cursorBlanco32.png) 16 16, auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    padding-top: 60px;
+    margin-top: -60px;
+}
+
+footer {
+    border-top: 1px solid var.$bd-lt;
+}
+
+button,
+a {
+    cursor: url(/media/img/cursorVerde32.png) 16 16, auto;
+}

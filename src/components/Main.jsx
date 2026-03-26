@@ -54,9 +54,9 @@ export const Main = () => {
 
 
     return (
-        <div className="cuerpo__logo">
-            <img className="logo__imagen" src="./media/img/gonzaloAlvarezPorto.png" alt="gonzaloAlvarezPorto" title="gonzaloAlvarezPorto" />
-            <p className="logo__texto">
+        <div className="d-flex jc-end md-jc-center p-1rem fd-col ai-center g-1rem h-100vh">
+            <img className="bd_2_s_shadow bd-animation" src="./media/img/gonzaloAlvarezPorto.png" alt="gonzaloAlvarezPorto" title="gonzaloAlvarezPorto" />
+            <p className="d-flex fc-white w-250px h-100px ta-center as-center ai-center jc-center">
                 {mensaje}
             </p>
         </div>
